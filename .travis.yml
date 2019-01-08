@@ -14,11 +14,11 @@ after_success:
   - docker build -t s9c9t9/multi-server ./server
   - docker build -t s9c9t9/multi-worker ./worker
 
-# Log in to the docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# Take those images and push them to docker hub
-- docker push s9c9t9/multi-client
-- docker push s9c9t9/multi-nginx
-- docker push s9c9t9/multi-server
-- docker push s9c9t9/multi-worker
+  # Take those images and push them to docker hub
+  - docker push s9c9t9/multi-client
+  - docker push s9c9t9/multi-nginx
+  - docker push s9c9t9/multi-server
+  - docker push s9c9t9/multi-worker
